@@ -12,7 +12,7 @@
   z-index: 200;
 
   /* Transparent glass effect when at top */
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 

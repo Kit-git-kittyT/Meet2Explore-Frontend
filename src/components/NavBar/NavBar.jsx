@@ -27,7 +27,7 @@ const NavBar = () => {
     
 
       <div className="nav-buttons">
-        <a className="nav-login" href="/auth/login">Log in</a>
+        <a className="nav-login" href="/auth/signin">Sign in</a>
         <a className="nav-signup" href="/auth/signup">Sign up</a>
       </div>
     </nav>

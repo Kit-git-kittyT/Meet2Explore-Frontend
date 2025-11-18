@@ -1,45 +1,70 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Mousewheel } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./HomePage.css";
 
-const images = [
-  "/images/montenegro1.png",
-  "/images/montenegro2.png",
-  "/images/montenegro3.png",
-  "/images/montenegro4.png",
-  "/images/montenegro5.png",
-];
+import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div className="vertical-slider">
+    <div className="home-slider-container">
       <Swiper
         direction="vertical"
-        slidesPerView={1}
-        spaceBetween={0}
-        mousewheel={true}
-        loop={true}
-        autoplay={{ delay: 2000 }}
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        speed={1500}
         pagination={{ clickable: true }}
-        modules={[Autoplay, Pagination, Mousewheel]}
-        className="mySwiper"
+        navigation={true}
+        loop={true}
+        className="home-swiper"
       >
-        {images.map((src, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="slide-bg"
-              style={{ backgroundImage: `url(${src})` }}
-            >
-              <div className="slide-content">
-                <h1>Meet2Explore MNE</h1>
-                <p>Discover Montenegro — mountains & sea</p>
-              </div>
+        <SwiperSlide>
+          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro1.png)' }}>
+            <div className="text-box">
+              <h1>Meet2Explore MNE</h1>
+              <p>Find travel partners and explore Montenegro</p>
             </div>
-          </SwiperSlide>
-        ))}
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro2.png)' }}>
+            <div className="text-box">
+              <h1>Discover Hidden Places</h1>
+              <p>Mountains, lakes and coastline</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro3.png)' }}>
+            <div className="text-box">
+              <h1>Plan Your Trips</h1>
+              <p>Create or join group adventures</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro4.png)' }}>
+            <div className="text-box">
+              <h1>Meet New People</h1>
+              <p>Travel safer and never alone</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro5.png)' }}>
+            <div className="text-box">
+              <h1>Welcome to Meet2Explore</h1>
+              <p>Your travel buddy platform</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
       </Swiper>
     </div>
   );

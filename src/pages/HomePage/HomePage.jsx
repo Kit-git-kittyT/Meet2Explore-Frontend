@@ -9,6 +9,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   return (
+    <div className="home-wrapper"> 
     <div className="home-slider-container">
       <Swiper
         direction="vertical"
@@ -20,52 +21,83 @@ const HomePage = () => {
         loop={true}
         className="home-swiper"
       >
+        {/* SLIDE 1 */}
         <SwiperSlide>
-          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro1.png)' }}>
-            <div className="text-box">
-              <h1>Meet2Explore MNE</h1>
-              <p>Find travel partners and explore Montenegro</p>
+          <div className="slide">
+            <div
+              className="slide-inner"
+              style={{ backgroundImage: 'url(/images/montenegro1.png)' }}
+            >
+              <div className="text-box">
+                <h1>Meet2Explore MNE</h1>
+                <p>Find travel partners and explore Montenegro</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
 
+        {/* SLIDE 2 */}
         <SwiperSlide>
-          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro2.png)' }}>
-            <div className="text-box">
-              <h1>Discover Hidden Places</h1>
-              <p>Mountains, lakes and coastline</p>
+          <div className="slide">
+            <div
+              className="slide-inner"
+              style={{ backgroundImage: 'url(/images/montenegro2.png)' }}
+            >
+              <div className="text-box">
+                <h1>Discover Hidden Places</h1>
+                <p>Mountains, lakes and coastline</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
 
+        {/* SLIDE 3 */}
         <SwiperSlide>
-          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro3.png)' }}>
-            <div className="text-box">
-              <h1>Plan Your Trips</h1>
-              <p>Create or join group adventures</p>
+          <div className="slide">
+            <div
+              className="slide-inner"
+              style={{ backgroundImage: 'url(/images/montenegro3.png)' }}
+            >
+              <div className="text-box">
+                <h1>Plan Your Trips</h1>
+                <p>Create or join group adventures</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
 
+        {/* SLIDE 4 */}
         <SwiperSlide>
-          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro4.png)' }}>
-            <div className="text-box">
-              <h1>Meet New People</h1>
-              <p>Travel safer and never alone</p>
+          <div className="slide">
+            <div
+              className="slide-inner"
+              style={{ backgroundImage: 'url(/images/montenegro4.png)' }}
+            >
+              <div className="text-box">
+                <h1>Meet New People</h1>
+                <p>Travel safer and never alone</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
 
+        {/* SLIDE 5 */}
         <SwiperSlide>
-          <div className="slide" style={{ backgroundImage: 'url(/images/montenegro5.png)' }}>
-            <div className="text-box">
-              <h1>Welcome to Meet2Explore</h1>
-              <p>Your travel buddy platform</p>
+          <div className="slide">
+            <div
+              className="slide-inner"
+              style={{ backgroundImage: 'url(/images/montenegro5.png)' }}
+            >
+              <div className="text-box">
+                <h1>Welcome to Meet2Explore</h1>
+                <p>Your travel buddy platform</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
 
       </Swiper>
+    </div>
     </div>
   );
 };

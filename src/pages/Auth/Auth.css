@@ -2,7 +2,8 @@
   max-width: 420px;
   margin: 120px auto 40px;
   padding: 30px;
-  background: white;
+  background: linear-gradient(135deg, #889609bb, #2a5298, #1bafe1d8);
+  overflow-x: hidden;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
@@ -21,7 +22,7 @@
 
 .auth-form label {
   font-size: 14px;
-  color: #333;
+  color: #000000;
 }
 
 .auth-form input {
@@ -33,7 +34,7 @@
 
 .auth-btn {
   padding: 12px;
-  background: #0b5ed7;
+  background: #023e98;
   color: white;
   border: none;
   border-radius: 8px;
@@ -43,7 +44,7 @@
 }
 
 .auth-btn:hover {
-  background: #0a54c4;
+  background: #bdcce0;
 }
 
 .auth-switch {
@@ -53,6 +54,13 @@
 }
 
 .auth-switch a {
-  color: #0b5ed7;
+  color: #000000;
   font-weight: 600;
 }
+
+
+
+
+
+
+

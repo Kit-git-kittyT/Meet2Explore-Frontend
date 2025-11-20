@@ -7,15 +7,12 @@ const API_URL = "http://localhost:3000/api/auth";
 // =======================
 export async function registerUser(username, password) {
   try {
-    const res = await axios.post(`${API_URL}/register`, {
+    const res = await axios.post(`${API_URL}/sign-up`, {
       username,
       password,
     });
 
-    // token from backend
     const token = res.data.token;
-
-    // save token
     localStorage.setItem("token", token);
 
     return { success: true, token };
@@ -32,14 +29,12 @@ export async function registerUser(username, password) {
 // =======================
 export async function loginUser(username, password) {
   try {
-    const res = await axios.post(`${API_URL}/login`, {
+    const res = await axios.post(`${API_URL}/sign-in`, {
       username,
       password,
     });
 
     const token = res.data.token;
-
-    // save token
     localStorage.setItem("token", token);
 
     return { success: true, token };

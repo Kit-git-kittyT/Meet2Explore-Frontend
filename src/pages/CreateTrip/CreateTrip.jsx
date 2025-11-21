@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateTrip.css";
+import { createTrip } from "../../services/tripService";
 
 const CITIES = ["Kotor", "Žabljak", "Budva", "Perast", "Ulcinj", "Cetinje"];
 
@@ -19,13 +20,17 @@ const CreateTrip = () => {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    await createTrip(formData);
+  const newTrip = await createTrip(formData);
 
-    navigate("/dashboard/my-trips");
+  if (!newTrip) {
+    alert("Error creating trip");
+    return;
   }
 
+  navigate("/dashboard/my-trips");
+}
   return (
     <div className="trip-container">
       <h2>Create a Trip</h2>

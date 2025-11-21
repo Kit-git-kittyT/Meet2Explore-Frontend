@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateTrip.css";
 import { createTrip } from "../../services/tripService";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.css";
 
 const CITIES = ["Kotor", "Žabljak", "Budva", "Perast", "Ulcinj", "Cetinje"];
 
@@ -20,17 +22,29 @@ const CreateTrip = () => {
   }
 
   async function handleSubmit(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const newTrip = await createTrip(formData);
+    const newTrip = await createTrip(formData);
 
-  if (!newTrip) {
-    alert("Error creating trip");
-    return;
+    if (!newTrip) {
+      Swal.fire({
+        title: "Error",
+        text: "Could not create trip.",
+        icon: "error",
+      });
+      return;
+    }
+
+    await Swal.fire({
+      title: "Trip Created! 🎉",
+      text: "Your adventure is now added to My Trips.",
+      icon: "success",
+      confirmButtonColor: "#4a90e2",
+    });
+
+    navigate("/dashboard/my-trips");
   }
 
-  navigate("/dashboard/my-trips");
-}
   return (
     <div className="trip-container">
       <h2>Create a Trip</h2>
@@ -46,15 +60,16 @@ const CreateTrip = () => {
         </select>
 
         <label>Start date</label>
-        <input type="date" name="startDate" onChange={handleChange} required />
+        <input type="date" name="startDate" value={formData.startDate} onChange={handleChange} required />
 
         <label>End date</label>
-        <input type="date" name="endDate" onChange={handleChange} required />
+        <input type="date" name="endDate" value={formData.endDate} onChange={handleChange} required />
 
         <label>Description</label>
         <textarea 
           name="description"
           placeholder="Describe your adventure..."
+          value={formData.description}
           onChange={handleChange}
           required
         />

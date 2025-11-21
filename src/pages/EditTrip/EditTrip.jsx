@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getMyTrips, updateTrip } from "../../services/tripService";
 import "./EditTrip.css";
 
+
 export default function EditTrip() {
   const { id } = useParams();
   const navigate = useNavigate();

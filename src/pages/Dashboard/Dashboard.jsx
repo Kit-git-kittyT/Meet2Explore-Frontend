@@ -12,7 +12,7 @@ const Dashboard = () => {
       name: "Žabljak, Montenegro",
       description:
         "Mountain town on Durmitor, perfect for hiking, lakes and fresh alpine air.",
-      image: "/images/zabljak.png",
+      image: "/images/žabljak.png",
     },
     {
       name: "Budva, Montenegro",

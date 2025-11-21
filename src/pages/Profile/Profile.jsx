@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { getProfile, updateProfile } from "../../services/userService";
 import "./Profile.css";
 
+
+
 export default function Profile() {
   const [user, setUser] = useState(null);
   const [form, setForm] = useState({

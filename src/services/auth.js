@@ -2,9 +2,9 @@ import axios from "axios";
 
 const API_URL = "http://localhost:3000/api/auth";
 
-// =======================
+
 // REGISTER USER
-// =======================
+
 export async function registerUser(username, password) {
   try {
     const res = await axios.post(`${API_URL}/sign-up`, {
@@ -24,9 +24,9 @@ export async function registerUser(username, password) {
   }
 }
 
-// =======================
+
 // LOGIN USER
-// =======================
+
 export async function loginUser(username, password) {
   try {
     const res = await axios.post(`${API_URL}/sign-in`, {
@@ -46,9 +46,8 @@ export async function loginUser(username, password) {
   }
 }
 
-// =======================
 // GET LOGGED USER
-// =======================
+
 export async function getCurrentUser() {
   try {
     const token = localStorage.getItem("token");
@@ -67,9 +66,9 @@ export async function getCurrentUser() {
   }
 }
 
-// =======================
+
 // LOGOUT
-// =======================
+
 export function logoutUser() {
   localStorage.removeItem("token");
 }

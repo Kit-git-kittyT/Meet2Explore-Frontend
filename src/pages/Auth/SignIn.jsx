@@ -29,6 +29,7 @@ const SignIn = () => {
     localStorage.setItem("token", result.token);
     localStorage.setItem("userId", result.userId);
     localStorage.setItem("username", result.username);
+    localStorage.setItem("gender", result.gender);
 
     navigate("/dashboard");
   }

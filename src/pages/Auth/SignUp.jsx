@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+      alert("Passwords do not match");
       return;
     }
 
@@ -31,7 +31,11 @@ const SignUp = () => {
       return;
     }
 
-    navigate("/auth/signin");
+    localStorage.setItem("token", result.token);
+    localStorage.setItem("userId", result.userId);
+    localStorage.setItem("username", result.username);
+
+    navigate("/dashboard");
   }
 
   return (
@@ -39,12 +43,10 @@ const SignUp = () => {
       <h2>Create Account</h2>
 
       <form className="auth-form" onSubmit={handleSubmit}>
-        
         <label>Username</label>
         <input
           type="text"
           name="username"
-          placeholder="Enter a username"
           required
           value={formData.username}
           onChange={handleChange}
@@ -54,7 +56,6 @@ const SignUp = () => {
         <input
           type="password"
           name="password"
-          placeholder="Create a password"
           required
           value={formData.password}
           onChange={handleChange}
@@ -64,21 +65,16 @@ const SignUp = () => {
         <input
           type="password"
           name="confirmPassword"
-          placeholder="Repeat your password"
           required
           value={formData.confirmPassword}
           onChange={handleChange}
         />
 
-        <button className="auth-btn" type="submit">
-          Sign up
-        </button>
-
+        <button type="submit" className="auth-btn">Sign up</button>
       </form>
 
       <p className="auth-switch">
-        Already have an account?{" "}
-        <a href="/auth/signin">Sign in</a>
+        Already have an account? <a href="/auth/signin">Sign in</a>
       </p>
     </div>
   );

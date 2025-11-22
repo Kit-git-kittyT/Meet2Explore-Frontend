@@ -4,8 +4,6 @@ import { getMyTrips, deleteTrip } from "../../services/tripService";
 import "./MyTrips.css";
 import Swal from "sweetalert2";
 
-
-
 export default function MyTrips() {
   const [trips, setTrips] = useState([]);
   const navigate = useNavigate();
@@ -24,36 +22,30 @@ export default function MyTrips() {
   }
 
   async function handleDelete(id) {
-  const result = await Swal.fire({
-    title: "Are you sure?",
-    text: "This trip will be deleted permanently.",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonText: "Delete",
-    cancelButtonText: "Cancel",
-    confirmButtonColor: "#d33",
-    cancelButtonColor: "#aaa",
-    background: "#fff",
-    customClass: {
-      popup: "rounded-4 shadow-lg",
-      title: "fw-bold",
-    },
-  });
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "This trip will be deleted permanently.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#aaa",
+    });
 
-  if (!result.isConfirmed) return;
+    if (!result.isConfirmed) return;
 
-  await deleteTrip(id);
+    await deleteTrip(id);
 
-  setTrips((prev) => prev.filter((t) => t._id !== id));
+    setTrips((prev) => prev.filter((t) => t._id !== id));
 
-  Swal.fire({
-    title: "Deleted!",
-    text: "Your trip has been removed.",
-    icon: "success",
-    confirmButtonColor: "#3085d6",
-    background: "#fff",
-  });
-}
+    Swal.fire({
+      title: "Deleted!",
+      text: "Your trip has been removed.",
+      icon: "success",
+      confirmButtonColor: "#3085d6",
+    });
+  }
 
   return (
     <div className="mytrips-container">
@@ -63,7 +55,11 @@ export default function MyTrips() {
 
       {trips.map((trip) => (
         <div className="trip-card" key={trip._id}>
-          <img src={getImage(trip.place)} alt={trip.place} className="trip-image" />
+          <img
+            src={getImage(trip.place)}
+            alt={trip.place}
+            className="trip-image"
+          />
 
           <div className="trip-info">
             <h3>{trip.place}</h3>

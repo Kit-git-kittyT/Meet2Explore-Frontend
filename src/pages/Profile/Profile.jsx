@@ -34,6 +34,35 @@ export default function Profile() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  // ⭐ NEW FUNCTION: Upload avatar image from local file
+  async function handleImageUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const token = localStorage.getItem("token");
+
+    const res = await fetch("http://localhost:3000/api/users/avatar", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      // Update avatar instantly
+      setForm((prev) => ({ ...prev, avatar: data.avatar }));
+      setUser((prev) => ({ ...prev, avatar: data.avatar }));
+
+      Swal.fire("Avatar updated!", "", "success");
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -51,6 +80,7 @@ export default function Profile() {
     }
   }
 
+  // Avatar logic stays the same
   const avatarSrc =
     form.avatar ||
     (form.gender === "female"
@@ -66,6 +96,7 @@ export default function Profile() {
           <p>Loading...</p>
         ) : (
           <form onSubmit={handleSubmit} className="profile-form">
+            
             <div className="profile-header">
               <img src={avatarSrc} alt="avatar" className="profile-avatar" />
               <div>
@@ -74,13 +105,12 @@ export default function Profile() {
               </div>
             </div>
 
-            <label>Avatar URL</label>
+            {/* ⭐ NEW UI: Local upload instead of URL */}
+            <label>Upload Avatar</label>
             <input
-              type="text"
-              name="avatar"
-              placeholder="Paste image URL (optional)"
-              value={form.avatar}
-              onChange={handleChange}
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
             />
 
             <label>Full name</label>

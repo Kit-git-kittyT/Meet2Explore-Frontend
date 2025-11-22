@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 import { loginUser } from "../../services/auth";
+
 const SignIn = () => {
   const navigate = useNavigate();
 
@@ -14,25 +15,29 @@ const SignIn = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
- async function handleSubmit(e) {
-  e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  const result = await loginUser(formData.username, formData.password);
+    const result = await loginUser(formData.username, formData.password);
 
-  if (!result.success) {
-    alert(result.message);
-    return;
+    if (!result.success) {
+      alert(result.message);
+      return;
+    }
+
+    // ⭐ SAVE EVERYTHING WE NEED FOR CHAT
+    localStorage.setItem("token", result.token);
+    localStorage.setItem("userId", result.userId);
+    localStorage.setItem("username", result.username);
+
+    navigate("/dashboard");
   }
-
-  navigate("/dashboard");
-}
 
   return (
     <div className="auth-container">
       <h2>Sign in</h2>
 
       <form onSubmit={handleSubmit} className="auth-form">
-        
         <label>Username</label>
         <input
           type="text"

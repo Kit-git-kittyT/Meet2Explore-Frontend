@@ -17,13 +17,16 @@ const NavBar = () => {
   }, []);
 
   // detect if user is “logged in” (frontend fake logic)
-  useEffect(() => {
-    setIsLoggedIn(location.pathname.startsWith("/dashboard"));
-  }, [location.pathname]);
+ useEffect(() => {
+  const token = localStorage.getItem("token");
+  setIsLoggedIn(!!token);
+}, [location.pathname]);
 
   function handleSignOut() {
-    navigate("/");
-  }
+  localStorage.removeItem("token");  // delete stored login
+  setIsLoggedIn(false);              // update UI immediately
+  navigate("/");
+}
 
   return (
     <nav className={scrolled ? "navbar scrolled" : "navbar"}>

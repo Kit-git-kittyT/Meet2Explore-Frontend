@@ -88,6 +88,8 @@ const HomePage = () => {
               className="slide-inner"
               style={{ backgroundImage: 'url(/images/montenegro5.png)' }}
             >
+
+          
               <div className="text-box">
                 <h1>Welcome to Meet2Explore</h1>
                 <p>Your travel buddy platform</p>
@@ -95,8 +97,8 @@ const HomePage = () => {
             </div>
           </div>
         </SwiperSlide>
-
       </Swiper>
+      
     </div>
     </div>
   );

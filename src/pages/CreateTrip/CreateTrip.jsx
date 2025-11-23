@@ -13,6 +13,8 @@ const CITIES = [
   { name: "Perast", id: "perast" },
   { name: "Ulcinj", id: "ulcinj" },
   { name: "Cetinje", id: "cetinje" },
+  { name: "Podgorica", id: "podgorica" },
+  { name: "Kolašin", id: "kolasin" },
 ];
 
 const CreateTrip = () => {

@@ -47,7 +47,24 @@ const Dashboard = () => {
         "Historic royal capital, museums, monasteries and national heritage.",
       image: "/images/cetinje.png",
     },
+
+   {
+      _id: "podgorica",
+      name: "Podgorica, Montenegro",
+      description:
+        "Capital city with rivers, modern cafes, parks, history and nightlife.",
+      image: "/images/podgorica.png",
+    },
+    {
+      _id: "kolasin",
+      name: "Kolašin, Montenegro",
+      description:
+        "Mountain town famous for skiing, forests, rivers, and national parks.",
+      image: "/images/kolašin.png",
+    },
   ];
+    
+  
 
   return (
     <div className="dashboard-wrapper">

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth";
+const API_URL = "https://meet2explore-17e5b6e60cab.herokuapp.com/auth";
 
 export async function registerUser(username, password) {
   try {

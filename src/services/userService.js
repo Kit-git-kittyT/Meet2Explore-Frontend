@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const API = "http://localhost:3000/api/users";
+const API = "https://meet2explore-17e5b6e60cab.herokuapp.com/users";
 
 export async function getProfile() {
   const token = localStorage.getItem("token");

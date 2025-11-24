@@ -1,52 +1,116 @@
-.vertical-slider {
+/* WRAPPER — daje pozadinu cijeloj stranici */
+.home-wrapper {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #889609bb, #2a5298, #1bafe1d8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px; /* nav height */
 }
 
-.mySwiper {
+/* SLIDER CONTAINER */
+.home-slider-container {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* Pozadina svakog slajda */
-.slide-bg {
+/* SWIPER FULLSCREEN */
+.swiper,
+.swiper-slide {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-/* tamni overlay */
-.slide-bg::before {
+/* OUTER WRAPPER */
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- INNER CARD WITH IMAGE ---------- */
+.slide-inner {
+  width: 85%;             /* manja slika */
+  height: 80%;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+
+  animation: fadeIn 1.2s ease;
+}
+
+/* DARK GRADIENT */
+.slide-inner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.25)
+    linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 60%);
   z-index: 1;
 }
 
-.slide-content {
+/* TEXT BOX */
+.text-box {
+  position: relative;
   z-index: 2;
-  color: white;
+
+  background: rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(8px);
+
+  padding: 25px 35px;
+  border-radius: 14px;
   text-align: center;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  color: white;
+
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
-.slide-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.text-box h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.slide-content p {
-  font-size: 1.3rem;
+.text-box p {
+  font-size: 1.2rem;
 }
 
-/* Pagination dots desno */
-.swiper-pagination {
-  right: 20px !important;
+/* SWIPER DOTS */
+.swiper-pagination-bullet {
+  background: #040404 !important;
 }
+
+/* SWIPER ARROWS */
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(7, 0, 0) !important;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home-wrapper .text-box h1,
+.home-wrapper .text-box p {
+  color: #ffffff !important;
+}
+

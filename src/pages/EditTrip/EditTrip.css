@@ -1,0 +1,50 @@
+.edittrip-container {
+  max-width: 600px;
+  margin: 120px auto;
+  padding: 30px 25px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.edittrip-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1b2d4f;
+}
+
+.edittrip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edittrip-form input,
+.edittrip-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.edittrip-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.save-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #1e4fcf;
+}

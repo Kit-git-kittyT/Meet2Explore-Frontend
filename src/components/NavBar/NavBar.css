@@ -7,55 +7,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 7%;
 
+  padding: 0 7%;
   z-index: 200;
 
-  /* Transparent glass effect when at top */
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
-  transition: background 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  transition: background 0.4s, box-shadow 0.4s;
 }
 
-/* ======= SCROLLED NAVBAR ======= */
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(0px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
 
-/* ======= LOGO ======= */
-.nav-logo a {
-  font-size: 26px;
-  font-weight: 800;
-  color: #0b5ed7;
-}
 
-/* ======= LINKS ======= */
-.nav-links {
+/* ========= LOGO SECTION ========= */
+.nav-logo {
   display: flex;
-  gap: 26px;
-  list-style: none;
-  font-weight: 500;
+  align-items: center;
 }
 
-.nav-links li a {
-  color: #0d0d0d;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.nav-links li a:hover {
-  opacity: 1;
+/* Logo image */
+.nav-logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
-/* ======= BUTTONS ======= */
+.nav-logo-text {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  color: #1864ab;
+  text-shadow: 0px 0px 18px rgba(255,255,255,0.6);
+  letter-spacing: -0.5px;
+}
+
+/* ========= AUTH BUTTONS ========= */
 .nav-buttons {
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .nav-login,
@@ -64,10 +61,10 @@
   border-radius: 30px;
   font-weight: 600;
   font-size: 14px;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: 0.25s ease;
 }
 
-/* Outline */
 .nav-login {
   border: 2px solid #0b5ed7;
   color: #0b5ed7;
@@ -77,11 +74,63 @@
   color: white;
 }
 
-/* Solid */
 .nav-signup {
+  border: 2px solid #0b5ed7;
+  color: #0b5ed7;
+}
+.nav-signup:hover {
   background: #0b5ed7;
   color: white;
 }
-.nav-signup:hover {
-  background: #0949a6;
+
+/* ========= LOGGED-IN MENU ========= */
+.nav-loggedin {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 17px;
+  font-weight: 600;
+  color: #143d7a;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+/* Underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #0465f7;
+  transition: width 0.25s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: #0949a6;
+}
+
+/* Sign Out */
+.nav-signout {
+  color: #137ff2;
+  background: none;
+  border: none;
+}
+
+.nav-signout:hover {
+  color: #4722da;
+}
+
+.nav-signout::after {
+  background: #5837a4;
 }

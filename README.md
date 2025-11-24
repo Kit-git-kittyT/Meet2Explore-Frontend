@@ -15,8 +15,6 @@
 
 * Start & end dates
 
-* Budget options: Low / Medium / High
-
 * Travel styles: hiking, beach, road trip, culture, food tour, and more
 
 * Maximum group size selection
@@ -25,7 +23,7 @@
 
 * Stay connected with travel partners through integrated chat:
 
-* 1-on-1 chat with matched partners
+* Group live chat with matched partners
 
 * Automatic group chat for each created trip
 
@@ -63,6 +61,15 @@
 * Database
 
 * MongoDB Atlas
+
+
+<br>
+
+__Project by:__<br>
+    Tamara Živković [worked on front-end development - dashboard, MyTrips, routing] https://github.com/tamarazivkovic9200-web <br>
+    Pavle Tošić [back-end developement - routing, socket.io in the front-end] https://github.com/Toshkee <br> https://www.linkedin.com/in/pavle-to%C5%A1i%C4%87-506554388/ <br>
+    Danilo Radonjić [back-end development - socket.io, user authentification] https://github.com/Kit-git-kittyT<br>https://www.linkedin.com/in/danilo-radonjic/ 
+    <br>Jelena Andrijević [front-end styling, .md files]<br> https://github.com/Jelena810-byte
 
 <br /><img src="./public/images/schema for read.me.png" alt="schema">
 

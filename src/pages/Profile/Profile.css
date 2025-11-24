@@ -1,6 +1,13 @@
 .profile-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #cce4ff, #f7d6ff);
+  background: linear-gradient(
+  135deg,
+  #dbeafe 0%,
+  #bfdbfe 25%,
+  #93c5fd 50%,
+  #60a5fa 75%,
+  #3b82f6 100%
+);
   padding-top: 120px;
   padding-bottom: 40px;
 }
@@ -37,7 +44,7 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #f3b9ff;
+  border: solid #60a5fa 3px;
   cursor: pointer;
   transition: transform 0.18s ease;
 }

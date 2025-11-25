@@ -14,7 +14,7 @@ export default function ViewActivities() {
     async function loadData() {
       try {
         // Load current user
-        const userRes = await fetch("http://localhost:3000/api/users/me", {
+        const userRes = await fetch("https://meet2explore-17e5b6e60cab.herokuapp.com/api/users/me", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         const userData = await userRes.json();
